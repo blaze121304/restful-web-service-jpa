@@ -1,0 +1,38 @@
+server:
+  port: 8088
+
+logging:
+  level:
+    org.springframework: DEBUG
+
+spring:
+  jpa:
+    show-sql: true
+    database: mysql
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  messages:
+    basename: messages.properties
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/rusty_db?createDatabaseIfNotExist=true&characterEncoding=UTF-8&useSSL=true
+    username: rusty
+    password: kim84121
+
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: "*"
+
+
+
+
+
