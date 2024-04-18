@@ -44,7 +44,7 @@ public class UserJpaController {
             throw new UserNotFoundException(String.format("ID[%s] not found",id));
         }
 
-        //Spring boot 3.1 Hateoas -> Resource->EntityModel
+        //Spring boot 3.1 Hateoas -> Resource -> EntityModel
         EntityModel<User> userEntityModel = EntityModel.of(user.get());
         WebMvcLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllUsers());
         userEntityModel.add(linkTo.withRel("all-users"));
@@ -107,7 +107,6 @@ public class UserJpaController {
 
         //포스트할 유저를 추가 - 2. 불변성 위배
         post.setUser(user.get());
-
 
 
         //포스트
