@@ -95,6 +95,7 @@ public class UserJpaController {
 
     }
 
+
     @PostMapping("/users/{id}/posts")
     public ResponseEntity<Post> createPost(@PathVariable int id, @RequestBody Post post){
 
@@ -108,7 +109,6 @@ public class UserJpaController {
         //포스트할 유저를 추가 - 2. 불변성 위배
         post.setUser(user.get());
 
-
         //포스트
         Post savedPost = postRepository.save(post);
 
@@ -118,6 +118,12 @@ public class UserJpaController {
                 .toUri();
 
         return ResponseEntity.created(location).build();
+
+
+
+    }
+
+    public static void main(String[] args) {
 
     }
 
